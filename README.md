@@ -1,1 +1,1 @@
-# SmartyPantsTechnologies
+# SmartyPantsTechnologiesAssignment
