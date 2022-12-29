@@ -2,7 +2,7 @@
 .homeDiv {
   display: flex;
   margin: 5px;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .mainDiv {
@@ -10,13 +10,24 @@
   margin: 5px;
 }
 
+
 .homeChildDiv {
   display: flex;
   text-align: center;
-  margin: 5px;
+  margin-left: 30%;
 }
 
-.log
+.logout {
+  width: 290px;
+  height: 40px;
+  background-color: rgb(6, 179, 179);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bolder;
+  font-size: 20px;
+  margin-top: 20px;
+} 
 
 .nav {
   width: 100%;
