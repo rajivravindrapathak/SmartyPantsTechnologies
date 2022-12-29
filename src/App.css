@@ -5,15 +5,9 @@
   justify-content: space-evenly;
 }
 
-.mainDiv {
-  text-align: center;
-  margin: 5px;
-}
-
 
 .homeChildDiv {
   display: flex;
-  text-align: center;
   margin-left: 30%;
 }
 

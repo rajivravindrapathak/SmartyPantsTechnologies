@@ -7,6 +7,11 @@ const HomePage = () => {
     const [error, setError] = useState(false);
     const [data, setData] = useState([]);
 
+    const logout = ()=> {
+      localStorage.removeItem('SignUp')
+      window.location.reload()
+    }
+
     useEffect(()=>{
         fetchData();
       },[])
@@ -34,7 +39,7 @@ const HomePage = () => {
         <div>
           <div className='homeDiv'>
             <h1>HomePage</h1>
-            <button className='logout'>Logout</button>
+            <button className='logout' onClick={logout}>Logout</button>
           </div>
               
           <div className='mainDiv'>
