@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
-import HomePage from './HomePage'
+import { Link } from 'react-router-dom'
+// import HomePage from './HomePage'
 import "./SignUp.module.css"
 
 const SignUp = () => {
@@ -32,8 +33,9 @@ const SignUp = () => {
 
     return (
         <div>
-            <h1>SignUp Page</h1>
-            {data?<HomePage/>:
+            <h1>Create account</h1>
+            <p>Aleady have account? <Link to="/signin" id='sin'>Sign In</Link></p>
+            {/* {data?<HomePage/>: */}
                 <div>
                     <div>
                         <input type="email" placeholder='User Email' ref={email} />
@@ -51,10 +53,10 @@ const SignUp = () => {
                         <input type="password" placeholder='Repeat Password' ref={password} />
                     </div>
                     <div>
-                        <button onClick={handleclick}>SignUp</button> 
+                    <button onClick={handleclick}><Link to="/homepage" id='lin' >SignUp</Link></button> 
                     </div>
                 </div>
-            }
+            {/* } */}
         </div>
     )
 }

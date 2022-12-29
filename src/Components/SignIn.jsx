@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import { Link } from 'react-router-dom'
 import "./SignIn.module.css"
 
 const SignIn = () => {
@@ -23,7 +24,7 @@ const SignIn = () => {
             <input type="password" placeholder='Password' ref={password} />
            </div>
            <div>
-            <button onClick={handleclick}>SignIn</button> 
+            <button onClick={handleclick}><Link to="/signup" id='sin' >SignIn</Link></button> 
            </div>
         </div>
     )

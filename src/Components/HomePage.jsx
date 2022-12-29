@@ -20,7 +20,7 @@ const HomePage = () => {
         })
         .then(res => { 
           setData(res.data);
-          console.log(res)
+          console.log(res.data)
           setLoading(false);
         })
         .catch(err => {
@@ -33,8 +33,17 @@ const HomePage = () => {
 
     return (
         <div>
-            <h1>HomePage</h1>
-          
+            <h1>HomePage</h1>  
+            <div className='mainDiv'>
+              {
+                data.map((item) => {
+                  return <div>
+                          {/* <CartpageDetails item={title} /> */}
+                          <p>{item.capital}</p>
+                         </div>
+                }) 
+              }
+            </div> 
         </div>
     )
 }
