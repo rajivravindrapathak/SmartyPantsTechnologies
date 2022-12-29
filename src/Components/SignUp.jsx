@@ -1,14 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import HomePage from './HomePage'
-import "./SignUp.module.css"
 
 const SignUp = () => {
     const email = useRef()
     const fname = useRef()
     const lname = useRef()
     const password = useRef()
-    // const repeatpassword = useRef()
 
     const [showHome, setShowHome] = useState(false)
 
@@ -35,7 +33,7 @@ const SignUp = () => {
     }
 
     return (
-        <div>
+        <div className='signupmainDiv'>
             <h1>Create account</h1>
             <p>Aleady have account? <Link to="/signin" id='sin'>Sign In</Link></p>
             {showHome?<HomePage/>:
@@ -56,7 +54,7 @@ const SignUp = () => {
                         <input type="password" placeholder='Repeat Password' ref={password} />
                     </div>
                     <div>
-                    <button onClick={handleclick}><Link to="/homepage" id='lin' >SignUp</Link></button> 
+                    <button className='sigUpbutton' onClick={handleclick}><Link className='sigUpbutton' to="/homepage" id='lin' >SignUp</Link></button> 
                     </div>
                 </div>
             }

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import "./HomePage.module.css"
 import axios from "axios"
 
 const HomePage = () => {
@@ -33,17 +32,21 @@ const HomePage = () => {
 
     return (
         <div>
-            <h1>HomePage</h1>  
-            <div className='mainDiv'>
-              {
-                data.map((item) => {
-                  return <div>
-                          {/* <CartpageDetails item={title} /> */}
-                          <p>{item.capital}</p>
-                         </div>
-                }) 
-              }
-            </div> 
+          <div className='homeDiv'>
+            <h1>HomePage</h1>
+            <button className='logout'>Logout</button>
+          </div>
+              
+          <div className='mainDiv'>
+            {
+              data.map((item) => {
+                return <div className='homeChildDiv'>
+                          <p>Name: {item.name}</p>
+                          <p>Capital: {item.capital}</p>
+                        </div>
+              }) 
+            }
+          </div> 
         </div>
     )
 }

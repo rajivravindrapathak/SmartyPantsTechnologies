@@ -1,6 +1,5 @@
 import React, { useRef } from 'react'
 import { Link } from 'react-router-dom'
-import "./SignIn.module.css"
 
 const SignIn = () => {
     const email = useRef()
@@ -15,7 +14,7 @@ const SignIn = () => {
     }
 
     return (
-        <div>
+        <div className='signupmainDiv'>
            <h1>SignInPage</h1> 
            <div>
             <input type="email" placeholder='User Email' ref={email} />
@@ -24,7 +23,7 @@ const SignIn = () => {
             <input type="password" placeholder='Password' ref={password} />
            </div>
            <div>
-            <button onClick={handleSignIn}><Link to="/homepage" id='sin' >SignIn</Link></button> 
+            <button className='sigInbutton' onClick={handleSignIn}><Link to="/homepage" id='sin' >SignIn</Link></button> 
            </div>
         </div>
     )
