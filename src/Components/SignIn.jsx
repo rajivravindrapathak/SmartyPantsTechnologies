@@ -6,11 +6,11 @@ const SignIn = () => {
     const email = useRef()
     const password = useRef()
 
-    const handleclick = () => {
+
+
+    const handleSignIn = () => {
         if(email.current.value || password.current.value) {
-            localStorage.setItem('email', email.current.value)
-            localStorage.setItem('password', password.current.value)
-            localStorage.setItem('SignIn', email.current.value)
+            
         }
     }
 
@@ -24,7 +24,7 @@ const SignIn = () => {
             <input type="password" placeholder='Password' ref={password} />
            </div>
            <div>
-            <button onClick={handleclick}><Link to="/signup" id='sin' >SignIn</Link></button> 
+            <button onClick={handleSignIn}><Link to="/homepage" id='sin' >SignIn</Link></button> 
            </div>
         </div>
     )

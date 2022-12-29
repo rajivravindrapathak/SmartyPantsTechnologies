@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-// import HomePage from './HomePage'
+import HomePage from './HomePage'
 import "./SignUp.module.css"
 
 const SignUp = () => {
@@ -8,23 +8,26 @@ const SignUp = () => {
     const fname = useRef()
     const lname = useRef()
     const password = useRef()
+    // const repeatpassword = useRef()
 
-    const [data, setData] = useState(false)
+    const [showHome, setShowHome] = useState(false)
 
-    const item = localStorage.getItem('SignUp')
+    const localsignup = localStorage.getItem('SignUp')
 
-    useEffect = () => {
-        if(item) {
-            setData(true)
+    useEffect (() => {
+        if(localsignup) {
+            setShowHome(false)
         }
-    }
+    })
 
     const handleclick = () => {
-        if(email.current.value || password.current.value) {
+        if(email.current.value && fname.current.value && lname.current.value
+            && password.current.value) {
             localStorage.setItem('email', email.current.value)
             localStorage.setItem('fname', fname.current.value)
             localStorage.setItem('lname', lname.current.value)
             localStorage.setItem('password', password.current.value)
+            localStorage.setItem('repeatpassword', password.current.value)
             localStorage.setItem('SignUp', email.current.value)
             window.location.reload()
             alert('SignUp account created successful')
@@ -35,7 +38,7 @@ const SignUp = () => {
         <div>
             <h1>Create account</h1>
             <p>Aleady have account? <Link to="/signin" id='sin'>Sign In</Link></p>
-            {/* {data?<HomePage/>: */}
+            {showHome?<HomePage/>:
                 <div>
                     <div>
                         <input type="email" placeholder='User Email' ref={email} />
@@ -56,7 +59,7 @@ const SignUp = () => {
                     <button onClick={handleclick}><Link to="/homepage" id='lin' >SignUp</Link></button> 
                     </div>
                 </div>
-            {/* } */}
+            }
         </div>
     )
 }
